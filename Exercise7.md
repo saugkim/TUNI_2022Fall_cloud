@@ -71,6 +71,7 @@ triton -i profile create
 
 triton profile set fi-tuni-01
 triton -i info
+  error (ECONNREFUSED): connect ECONNREFUSED  10.88.88.XX:80
 ```
 I cannnot get correct result here, because I could not get proper url (XX)
 
