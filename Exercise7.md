@@ -69,13 +69,29 @@ triton -i profile create
   account: ugkim
   keyid: 6c:84:dc:ce:ea:cf:8trtrd:77:de:32:fb:5f:83:71:47:b2
 
-trion -i info
+triton profile set fi-tuni-01
+triton -i info
 ```
 
 <br>
 
 
-**Triton CLI tool -Running instances on Triton cloud platform**
+**Triton CLI tool -Running instances on Triton cloud platform** - I cannot perform this either! 
+
+create an ubuntu instance 
+```
+triton -i images
+triton -i packages
+```
+
+open a ssh connection to the ubuntu instance
+```
+clear
+triton -i instance list
+triton -i ssh name_of_instance
+uname -a
+hostnamectl
+```
 
 
 
