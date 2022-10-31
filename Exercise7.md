@@ -72,6 +72,7 @@ triton -i profile create
 triton profile set fi-tuni-01
 triton -i info
 ```
+I cannnot get correct result here, because I could not get proper url (XX)
 
 <br>
 
