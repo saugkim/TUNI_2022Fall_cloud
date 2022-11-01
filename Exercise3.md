@@ -15,9 +15,16 @@ apt-cache policy docker-ce
 sudo apt install docker-ce
 
 sudo systemctl status docker
-```
 
+docker ps
+docker start <container name>
+docker stop <container name>
+docker rm <container name>
+
+```
+<br>
 avoiding sudo
+
 ```
 sudo usermod -aG docker ${USER}
 su - ${USER}
@@ -27,17 +34,27 @@ sudo usermod -aG docker myusernamehere
 ```
 
 
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04  
 
-
+<br>
 
 **WordPress installation with Docker**
 
+```
+curl -V
 
-sudo docker run -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=wordpress --name wordpressdb -v "$PWD/database":/var/lib/mysql -d mariadb:latest
+# MariaDB in a container
+mkdir ~/wordpress && cd ~/wordpress
+docker run -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=wordpress --name wordpressdb -v "$PWD/database":/var/lib/mysql -d mariadb:latest
+
+# wordpress
+docker pull wordpress
+docker run -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=1234 --name wordpress --link wordpressdb:mysql -p 80:80 -v "$PWD/html":/var/www/html -d wordpress
+
+```  
+https://upcloud.com/resources/tutorials/wordpress-with-docker#point-2
 
 
-sudo docker run -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=1234 --name wordpress --link wordpressdb:mysql -p 80:80 -v "$PWD/html":/var/www/html -d wordpress
 
-192.168.59.128
+http://192.168.59.128/admin
 
-http://192.168.59.128/wp-login.php?loggedout=tru
