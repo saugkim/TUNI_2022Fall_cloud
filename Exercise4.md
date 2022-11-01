@@ -31,7 +31,6 @@ EOF
 docker-compose up -d
 
 docker-compose ps
-
 ```
 
 https://docs.docker.com/compose/install/  
@@ -61,14 +60,6 @@ sudo docker run -d -p 3310:3310 mkodockx/docker-clamav:buster-slim
 
 sudo docker ps
 
-sudo docker stop youthful_gagarin
-sudo docker stop owncloud_server
-sudo docker stop owncloud_mariadb
-sudo docker stop owncloud_redis
-
-sudo docker-compose down
-
-sudo poweroff
 ```
 
 https://hub.docker.com/r/clamav/clamav  
@@ -87,3 +78,17 @@ docker ps
 docker logs name_of_clamav_container | tail
 ```
 
+<br> 
+
+**END**
+
+```
+sudo docker stop name_of_clamav_container
+sudo docker stop owncloud_server
+sudo docker stop owncloud_mariadb
+sudo docker stop owncloud_redis
+
+sudo docker-compose down
+
+sudo poweroff
+```
