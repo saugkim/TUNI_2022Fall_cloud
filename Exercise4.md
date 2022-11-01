@@ -69,3 +69,9 @@ sudo poweroff
 ```
 
 src: https://hub.docker.com/r/clamav/clamav
+
+
+<br> 
+
+download ClamAV virus file  
+https://github.com/eagleas/clamav/blob/master/spec/clamav-testfiles/clam.exe
