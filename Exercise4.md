@@ -56,6 +56,8 @@ sudo docker run -d -p 3310:3310 mkodockx/docker-clamav:buster-slim
 
 sudo docker ps
 
+sudo docker logs youthful_gagarin | tail
+
 sudo docker stop youthful_gagarin
 sudo docker stop owncloud_server
 sudo docker stop owncloud_mariadb
