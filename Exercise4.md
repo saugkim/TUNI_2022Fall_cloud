@@ -37,6 +37,12 @@ docker-compose ps
 https://docs.docker.com/compose/install/  
 https://doc.owncloud.com/server/10.11/admin_manual/installation/docker/#docker-compose  
 
+```
+sudo -i
+updatedb
+locate test1_own_capturing1.PNG
+  - /var/lib/docker/volumes/owncloud-docker-server_files/_data/files/username/files/Photos
+```
 
 <br>
 
@@ -52,11 +58,8 @@ sudo docker run --interactive --tty --rm clamav/clamav
 sudo docker run -d -p 3310:3310 clamav/clamav
 
 sudo docker run -d -p 3310:3310 mkodockx/docker-clamav:buster-slim
---> https://mko-x.github.io/docker-clamav/
 
 sudo docker ps
-
-sudo docker logs youthful_gagarin | tail
 
 sudo docker stop youthful_gagarin
 sudo docker stop owncloud_server
@@ -68,10 +71,19 @@ sudo docker-compose down
 sudo poweroff
 ```
 
-src: https://hub.docker.com/r/clamav/clamav
-
+https://hub.docker.com/r/clamav/clamav  
+https://mko-x.github.io/docker-clamav/  
 
 <br> 
 
+**Testing of ClamAV**
+
 download ClamAV virus file  
 https://github.com/eagleas/clamav/blob/master/spec/clamav-testfiles/clam.exe
+
+```
+clear
+docker ps
+docker logs name_of_clamav_container | tail
+```
+
