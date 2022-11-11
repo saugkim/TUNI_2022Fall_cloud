@@ -85,13 +85,13 @@ systemctl start minetest.service
 ```
 
 4. Download (on Windows)  
-5. on Windows edit minetest.conf  
-6. on Windows launch Minetest client and open Join game tab  
-7. on Windows play the game  
-8. on Game press Esc key and take screenshot  
-9. on Game climb the ...  
+5. on Windows, edit minetest.conf  
+6. on Windows, launch Minetest client and open Join game tab  
+7. on Windows, play the game  
+8. on Game, press Esc key and take screenshot  
+9. on Game, climb the ...  
 
-10. on Ubuntu Server still inside the lxc shell 
+10. on Ubuntu Server, we are still inside the lxc shell 
 ```
 head --lines=100 /home/minetest/.minetest/debug.txt
 ```
