@@ -3,9 +3,8 @@
 
 **Connecting LXD container to the LAN**
 
-my code of this part  
 
-1.create a new LXD profile and use maclan ...  
+1. Create a new LXD profile and use maclan to connect container to the LAN. Then, launch Ubuntu 20.04 container under the new profile. Name the new container to Minetest. Read installation instructions from the [link](https://blog.simos.info/how-to-make-your-lxd-container-get-ip-addresses-from-your-lan/). Check that Minetest container is on the same LAN as Ubuntu host.  
 ```
 lxc profile list
 lxc profile create maclan
@@ -23,9 +22,10 @@ lxc exet Minetest -- ping -c 3 IPV4
   error: 
 ```
 
-2.you cannot connet from .....
+2. You cannot connect from Ubuntu host to Minetest container because netplan does not support macvlan interface. This is confusing, but you can connect to Minetest container from the desktop PC and other virtual instances in same the LAN.
 
-3.Move into Ubuntu 20.04 and install Minetest server ...
+3. Move into Ubuntu 20.04 container and install Minetest server. Minetest is an open source version of Minecraft. Read installation instructions from the link. Note the following refinements.
+
 ```
 lxc shell Minetest
 
@@ -83,14 +83,15 @@ Control+C to exit from editing
 systemctl enable minetest.service
 systemctl start minetest.service
 ```
-4.Download (on Windows)  
-5.on Windows edit minetest.conf  
-6.on Windows launch Minetest client and open Join game tab  
-7.on Windows play the game  
-8.on Game press Esc key and take screenshot  
-9.on Game climb the ...  
 
-10.on Ubuntu Server still inside the lxc hell 
+4. Download (on Windows)  
+5. on Windows edit minetest.conf  
+6. on Windows launch Minetest client and open Join game tab  
+7. on Windows play the game  
+8. on Game press Esc key and take screenshot  
+9. on Game climb the ...  
+
+10. on Ubuntu Server still inside the lxc hell 
 ```
 head --lines=100 /home/minetest/.minetest/debug.txt
 ```
