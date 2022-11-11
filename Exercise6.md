@@ -91,7 +91,7 @@ systemctl start minetest.service
 8. on Game press Esc key and take screenshot  
 9. on Game climb the ...  
 
-10. on Ubuntu Server still inside the lxc hell 
+10. on Ubuntu Server still inside the lxc shell 
 ```
 head --lines=100 /home/minetest/.minetest/debug.txt
 ```
