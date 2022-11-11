@@ -45,7 +45,7 @@ useradd -mU minetest
 ufw allow 30000
 su minetest
   $ minetest --server
-  $ Control+C --> stop server
+  $ Control+C  (stop server)
   $ exit   
 
 step 3
@@ -55,7 +55,7 @@ mv minetest.conf.example minetest.conf
 nano minetest.conf
    server_name = Minetest server
    server_description = Welcome to my Minetest Server
-   bind_address = ubuntu IP address here (which I failed to get proper one)
+   bind_address = ubuntu IP address here (I failed to get proper ip address)
    prot = 30000
    exit from nano
 
