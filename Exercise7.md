@@ -82,7 +82,41 @@ mac# ssh root@10.88.88.200
 ```
 
 9. Perform the post-installation procedures. Read installation instructions from the link (Testing and Developing). Skip instructions on chapter “Maintaining CoaL”.
- 
+https://github.com/TritonDataCenter/triton/blob/master/docs/developer-guide/coal-setup.md#testing-and-developing  
+
+```
+#Root Access
+ssh root@10.88.88.200  (#password 'rootpass')
+
+#Health checks
+#To confirm the health of the services:
+sdcadm health
+
+#Adding external Nics
+#To add external nics to imgapi and adminui:
+sdcadm post-setup common-external-nics
+-- Added external nic to adminui
+-- Added external nic to imgapi
+
+#To confirm which services have an external IP, run sdc-vmapi
+sdc-vmapi /vms?state=running | json -H -ga alias nics.0.ip nics.1.ip
+
+#To test whether you can access the AdminUI via the external IP address, in a web browser on the host computer, navigate to https://10.88.88.3.
+
+#Setting up CloudAPI for development
+
+#CloudAPI provides the self-serve API access to Triton. If you are developing or testing against CloudAPI, you can install it by running:
+sdcadm post-setup cloudapi
+-- cloudapi0 zone created
+
+#If you plan to use CloudAPI in CoaL and to provision VMs, you will need to enable the head node to act as a compute node for instances. The head node is excluded from the set of servers used for provisioning customer instances. For development and testing, allowing the head node to act as a compute node for instances is useful.
+#To enable the head node to act as a compute node for instances:
+
+sdcadm post-setup dev-headnode-prov
+-- Configuring CNAPI to allow headnode provisioning and over-provisioning (allow a minute to propagate)
+
+```
+
 10. Install Docker Engine for Triton. Use following commands (Source).      
 ```
 headnode# sdcadm post-setup dev-sample-data
