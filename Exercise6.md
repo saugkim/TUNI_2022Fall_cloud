@@ -9,9 +9,9 @@
 lxc profile list
 lxc profile create maclan
 ip route show default 0.0.0.0/0
-    default via X.X.X.X dev ens33 proto dhcp src x.x.x.x metric 100
+    default via 192.168.32.2 dev ens33 proto dhcp src 192.168.32.128 metric 100
     
-lxc profile device add maclan eth0 nic nictype-maclan parent=??
+lxc profile device add maclan eth0 nic nictype=maclan parent=ens33
    error: eth0 upsupported device type
 
 lxc profile show maclan
@@ -22,6 +22,19 @@ lxc exet Minetest -- ping -c 3 IPV4
   error: 
 ```
 
+```
+lxc create profile macvlan1
+
+lxc profile device add macvlan1 eth0 nic nictype=macvlan parent=ens33
+
+lxc launch ubuntu:20.04 minetest-01 --profile default --profile macvlan1
+
+lxc info minetest-01
+
+lxc shell minetest-01
+```
+ 
+ 
 2. You cannot connect from Ubuntu host to Minetest container because netplan does not support macvlan interface. This is confusing, but you can connect to Minetest container from the desktop PC and other virtual instances in same the LAN.
 
 3. Move into Ubuntu 20.04 container and install Minetest server. Minetest is an open source version of Minecraft. Read installation instructions from the link. Note the following refinements.
