@@ -117,10 +117,21 @@ sdcadm post-setup dev-headnode-prov
 
 ```
 
-10. Install Docker Engine for Triton. Use following commands (Source).      
+10. Install Docker Engine for Triton. Use following commands (Source).  
+https://github.com/TritonDataCenter/sdc-docker#installation
+
 ```
-headnode# sdcadm post-setup dev-sample-data
-headnode# sdcadm post-setup docker
+ sdcadm post-setup dev-sample-data
+ sdcadm post-setup docker
+
+ ssh root@10.99.99.7                   (#ssh to the CoaL GZ)
+ sdcadm self-update
+ sdcadm post-setup common-external-nics && sleep 10  (#imgapi needs external)
+ sdcadm post-setup dev-headnode-prov
+ sdcadm post-setup dev-sample-data  (#sample packages for docker containers)
+ sdcadm post-setup cloudapi
+ sdcadm post-setup docker
+ sdcadm experimental update dockerlogger
 ```
 
 11. Check the IP address of AdminUI and CloudAPI. AdminUI offers operator's management interface. Respectively, CloudAPI offers API interface for managing customer instances.  
