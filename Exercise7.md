@@ -67,7 +67,7 @@ triton -i profile create
   name: fi-tuni-01
   url: https://10.88.88.XX --> XX?
   account: ugkim
-  keyid: 6c:84:dc:ce:ea:cf:??:77:de:32:fb:5f:83:71:47:b2
+  keyid: 6c:84:dc:ce:ea:cf:8d:77:de:32:fb:5f:83:71:47:b2
 
 triton profile set fi-tuni-01
 triton -i info
