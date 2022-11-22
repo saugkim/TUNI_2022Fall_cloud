@@ -106,11 +106,14 @@ sdc-vmapi /vms?state=running | json -H -ga alias nics.0.ip nics.1.ip
 #Setting up CloudAPI for development
 
 #CloudAPI provides the self-serve API access to Triton. If you are developing or testing against CloudAPI, you can install it by running:
+
 sdcadm post-setup cloudapi
 -- cloudapi0 zone created
 
-#If you plan to use CloudAPI in CoaL and to provision VMs, you will need to enable the head node to act as a compute node for instances. The head node is excluded from the set of servers used for provisioning customer instances. For development and testing, allowing the head node to act as a compute node for instances is useful.
-#To enable the head node to act as a compute node for instances:
+# If you plan to use CloudAPI in CoaL and to provision VMs, you will need to enable the head node to act as a compute node for instances. 
+# The head node is excluded from the set of servers used for provisioning customer instances. 
+# For development and testing, allowing the head node to act as a compute node for instances is useful.
+# To enable the head node to act as a compute node for instances:
 
 sdcadm post-setup dev-headnode-prov
 -- Configuring CNAPI to allow headnode provisioning and over-provisioning (allow a minute to propagate)
