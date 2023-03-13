@@ -1,8 +1,9 @@
-**Exercise 1: Basic Linux Commands**
+### Exercise 1: Basic Linux Commands  
+
 
 Virtualization is not directly supported by an operating system. Virtualization support is implemented with separate virtualization software (Tier-2). Virtualization software is used to create a virtual machine. A virtual machine works like a real computer. In the next exercise, we will use VMware Workstation virtualization software and install Linux operating system on a virtual machine.
 
-Installation of Ubuntu Server
+**Installation of Ubuntu Server**  
 
 The following instructions are made for Microsoft Windows 10. If you are using MacOS, then you have to adapt instructions.
 
